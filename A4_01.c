@@ -1,22 +1,39 @@
 #include<stdio.h>
 
+int calculateFactorial(int n)
+{
+  if(n<0)
+  {
+   printf("Factorial is not define for -ve number:\n");
+   return -1;
+  
+  }else if(n == 1 && n == 0)
+   {
+    return 1;
+   }
+   else
+     {
+       int factorial = 1;
+	   for(int i = 2; i <= n; i++)
+	   {
+         factorial *= i;
+         
+	   }
+        return factorial;
+
+	 }
+}
+
 int main(void)
 {
-   int num = 12;
-   int *pnum = &num;
-   int **ppnum = &pnum;
+    int num;
+	printf("Enter number:\n");
+	scanf("%d",&num);
 
-    printf("num = %d\n",num);
-    printf("*pnum = %d\n",*pnum);
-    printf("**ppnum = %d\n",**ppnum);
-
-    printf("&num = %u\n",&num);
-    printf("pnum = %u\n",pnum);
-    printf("&pnum = %u\n",&pnum);
-    printf("ppnum = %u\n",ppnum);
-    
+	int res = calculateFactorial(num);
+        printf("The factorial of %d is %d\n", num, res);
+   
 
 
-   return 0;
-
+return 0;
 }
